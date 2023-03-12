@@ -20,9 +20,6 @@ Please select the option:
             Console.WriteLine("  >>> Running Alien Dictionary word sort");
             AlienDictionary alienDictionary = new AlienDictionary();
             alienDictionary.Execute();
-            var inputList = new List<string>{"","",""};
-            var result = alienDictionary.getOrderedList(inputList);
-            Console.WriteLine(result[0]);
             break;
         default:
             repeat = false;
