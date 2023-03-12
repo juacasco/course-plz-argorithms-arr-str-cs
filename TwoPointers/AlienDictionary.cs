@@ -49,7 +49,7 @@ public class AlienDictionary
             for (int l = 0; l < Math.Min(evalWord1.Length, evalWord2.Length) ; l++)
             {
                 Console.WriteLine($"Comparing letter {l}: {evalWord1[l]} -> {evalWord2[l]}");
-                if ((int)alphabet[evalWord1[l]] > (int)alphabet[evalWord2[l]])
+                if ((int)alphabet[evalWord1[l]] > (int)alphabet[evalWord2[l]]) //TODO: add validation for missing letters or try..catch to handle it
                 {
                     return false;
                 }
