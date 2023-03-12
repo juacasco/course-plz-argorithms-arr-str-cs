@@ -43,17 +43,22 @@ public class AlienDictionary
         // loop on list of words to go one by one comparing first with second
         for (int i = 0; i < listOfWords.Count-1; i++)
         {
-            int evalWord1Value = 0, evalWord2Value = 0;
             string evalWord1 = listOfWords[i];
             string evalWord2 = listOfWords[i+1];
             Console.WriteLine($"Evaluating: {evalWord1} and {evalWord2} ");
-            for (int l = 0; l < evalWord1.Length; l++)
+            for (int l = 0; l < Math.Min(evalWord1.Length, evalWord2.Length) ; l++)
             {
-                evalWord1Value += (int)alphabet[evalWord1[l]];
-                evalWord2Value += (int)alphabet[evalWord2[l]];
-                Console.WriteLine($"value1 {evalWord1Value} {evalWord1[l]} - value2 {evalWord2Value} {evalWord2[l]}");
+                Console.WriteLine($"Comparing letter {l}: {evalWord1[l]} -> {evalWord2[l]}");
+                if ((int)alphabet[evalWord1[l]] > (int)alphabet[evalWord2[l]])
+                {
+                    return false;
+                }
+            }
+            if (evalWord1.Length > evalWord2.Length)
+            {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }
